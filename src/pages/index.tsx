@@ -30,7 +30,7 @@ export default function Home() {
             tmp += `\t\t<ModItem>
 \t\t\t<Name>${id}.sbm</Name>
 \t\t\t<PublishedFileId>${id}</PublishedFileId>
-\t</ModItem>\n`;
+\t\t</ModItem>\n`;
         }
 
         return tmp + "\t</Mods>";
