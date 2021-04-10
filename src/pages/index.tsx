@@ -27,7 +27,7 @@ export default function Home() {
 
         let tmp = "<Mods>\n";
         for (const [id, item] of Object.entries(data)) {
-            tmp += `\t<ModItem><Name>${id}</Name><PublishedFileId>${id}</PublishedFileId></ModItem>\n`;
+            tmp += `\t<ModItem><Name>${id}.sbm</Name><PublishedFileId>${id}</PublishedFileId></ModItem>\n`;
         }
 
         return tmp + "</Mods>";
