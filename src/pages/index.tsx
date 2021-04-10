@@ -25,12 +25,15 @@ export default function Home() {
             return;
         }
 
-        let tmp = "<Mods>\n";
+        let tmp = "\t<Mods>\n";
         for (const [id, item] of Object.entries(data)) {
-            tmp += `\t<ModItem><Name>${id}.sbm</Name><PublishedFileId>${id}</PublishedFileId></ModItem>\n`;
+            tmp += `\t\t<ModItem>
+\t\t\t<Name>${id}.sbm</Name>
+\t\t\t<PublishedFileId>${id}</PublishedFileId>
+\t</ModItem>\n`;
         }
 
-        return tmp + "</Mods>";
+        return tmp + "\t</Mods>";
     }, [data]);
 
     return (
