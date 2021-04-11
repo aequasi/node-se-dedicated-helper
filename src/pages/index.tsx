@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 import axios from "axios";
 import type { Mods } from "./api/collection/[id]";
 
-const baseUrl = "https://steamcommunity.com/workshop/filedetails/?id=";
+const baseUrl = "https://steamcommunity.com/sharedfiles/filedetails/?id=";
 export default function Home() {
     const [url, setUrl] = useState(baseUrl);
     const inputRef = useRef<HTMLInputElement>(null);
@@ -25,15 +25,16 @@ export default function Home() {
             return;
         }
 
-        let tmp = "\t<Mods>\n";
+        let tmp = "  <Mods>\n";
         for (const [id, item] of Object.entries(data)) {
-            tmp += `\t\t<ModItem>
-\t\t\t<Name>${id}.sbm</Name>
-\t\t\t<PublishedFileId>${id}</PublishedFileId>
-\t\t</ModItem>\n`;
+            tmp += `    <ModItem FriendlyName="${item.name}">
+      <Name>${id}.sbm</Name>
+      <PublishedFileId>${id}</PublishedFileId>
+      <PublishedServiceName>steam</PublishedServiceName>
+    </ModItem>\n`;
         }
 
-        return tmp + "\t</Mods>";
+        return tmp + "  </Mods>";
     }, [data]);
 
     return (
