@@ -27,10 +27,9 @@ export default function Home() {
 
         let tmp = "  <Mods>\n";
         for (const [id, item] of Object.entries(data)) {
-            tmp += `    <ModItem FriendlyName="${item.name.replace(/\n/g, " ").replace(/"/, "'")}">
+            tmp += `    <ModItem>
       <Name>${id}.sbm</Name>
       <PublishedFileId>${id}</PublishedFileId>
-      <PublishedServiceName>steam</PublishedServiceName>
     </ModItem>\n`;
         }
 
